@@ -23,3 +23,6 @@ tags: [spring, classpath, gradle, dependency]
 
 > api 사용시 의존성의 내부 의존성이 가진 리소스에 접근하여 변경이 가능하기 때문에, 의도치 않은 결합(Coupling), 호환성, 빌드 시간 중가 등의 문제가 발생할 수 있다.
 {: .prompt-warning }
+
+> An example showing the `warning` type prompt.
+{: .prompt-warning }
