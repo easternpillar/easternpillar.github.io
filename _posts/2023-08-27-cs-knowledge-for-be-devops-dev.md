@@ -1,7 +1,7 @@
 ---
 title: OS, Network, Database 기초 상식
 date: 2023-08-27
-categories: [Interview]
+categories: [Computer Science]
 tags: [interview, cs, os, network, database]
 ---
 
