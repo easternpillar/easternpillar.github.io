@@ -11,7 +11,7 @@ tags: [interview, cs, os, network, database]
 
 > 커널(kernel)이란 운영체제의 핵심 기능 집합을 말한다.
 > linux가 대표적인 커널이며 이를 활용한 다양한 운영체제가 존재한다.
-> {: .prompt-info }
+{: .prompt-info }
 
 #### 프로세스 관리
 
@@ -31,7 +31,7 @@ tags: [interview, cs, os, network, database]
 
 > 멀티 프로세싱과 멀티태스킹: 멀티 프로세싱은 여러개의 코어에서 여러개의 프로세스가 동시에 실행될 수 있는 것을 말하고,
 > 멀티태스킹은 하나의 코어에서 여러 개의 프로세스 또는 쓰레드가 문맥교환을 통해 실행될 수 있다.
-> {: .prompt-info }
+{: .prompt-info }
 
 ##### 쓰레드
 
@@ -45,7 +45,7 @@ tags: [interview, cs, os, network, database]
 
 > Spring 기반 비동기 프로그래밍 방식에서 사용되는 이벤트 루프 모델은 일반적으로 코어 개수만큼 커널 쓰레드를 생성하고
 > 유저 레벨 쓰레드를 통해 실제 로직을 비동기 넌블러킹 방식으로 실행한다.
-> {: .prompt-info }
+{: .prompt-info }
 
 ##### CPU 스케줄링
 
@@ -56,7 +56,7 @@ tags: [interview, cs, os, network, database]
   - 비선점형(No Preemption): 코어에서 실행되고 있는 프로세스를 할당 해제할 수 없다.
 
 > 스케쥴링 알고리즘에 따라 장기간 코어에서 실행되지 못하는 starvation이 발생할 수 있다.
-> {: .prompt-info }
+{: .prompt-info }
 
 ##### 인터럽트(Interrupt)
 
@@ -117,7 +117,7 @@ tags: [interview, cs, os, network, database]
 > 캐시 메모리는 지역성의 개념을 띈다.
 > 시간적 지역성(Temporal Locality): 한 번 접근한 데이터나 명령어가 다시 접근될 가능성이 높다는 원칙
 > 공간적 지역성(Spatial Locality): 한 번 접근한 데이터나 명령어 근처의 데이터나 명령어에 접근할 가능성이 높다는 원칙
-> {: .prompt-info }
+{: .prompt-info }
 
 ##### 페이징(Paging)과 가상 메모리
 
@@ -129,7 +129,7 @@ tags: [interview, cs, os, network, database]
 - Swap Space: 보조기억장치에 존재하는 공간으로 메모리에 할당하여 사용하지 않는 페이지를 저장한다.
 
 > 세그멘테이션은 동적인 길이로 메모리를 분할하며 이로 인해 세그멘테이션 외부에 단편화가 발생한다.
-> {: .prompt-info }
+{: .prompt-info }
 
 #### 입출력 장치 관리
 
@@ -171,7 +171,7 @@ tags: [interview, cs, os, network, database]
 > 세션: 세션 ID / 데이터 
 > 표현: 없음 / 데이터
 > 응용: URL / 메시지
-> {: .prompt-info }
+{: .prompt-info }
 
 > TCP/IP 4계층은 OSI 7계층 중
 > 물리, 데이터링크 계층을 네트워크 액세스 계층으로
@@ -179,7 +179,7 @@ tags: [interview, cs, os, network, database]
 > 전송 계층을 전송계층으로
 > 세션, 표현, 응용 계층을 응용계층으로
 > 통합하여 관리한다.
-> {: .prompt-info }
+{: .prompt-info }
 
 ### Database
 
@@ -207,7 +207,7 @@ tags: [interview, cs, os, network, database]
 > 삽입 이상: 새로운 데이터 입력 시 불필요한 데이터가 함께 삽입되는 이상
 > 삭제 이상: 데이터 삭제 시 의도치 않은 데이터가 함께 삭제되는 이상
 > 갱신 이상: 데이터 갱신 시 중복된 데이터로 인해 일관성으로 저해되는 이상
-> {: .prompt-info }
+{: .prompt-info }
 
 #### 트랜잭션(Transaction)
 
@@ -239,7 +239,7 @@ tags: [interview, cs, os, network, database]
 
 > 인덱스의 대표적인 자료구조로는 해시와 B트리가 있다.
 > 해시는 범위 검색이나 정렬에 비효율적이므로 RDBMS에서는 일반적으로 B트리 구조를 따르고 NoSQL에서는 해시를 사용한다.
-> {: .prompt-info }
+{: .prompt-info }
 
 #### NoSQL(Not only SQL)
 
