@@ -21,5 +21,5 @@ tags: [spring, classpath, gradle, dependency]
 3. implementation: 컴파일, 런타임 시점 모두 사용 가능
 4. api: implementation과 동일하게 컴파일, 런타임 시점 모두 사용 가능하며 해당 의존성이 의존하는 내부 의존성도 사용할 수 있다.
 
-> api 사용시 의존성의 내부 의존성이 가진 리소스에 접근하여 변경이 가능하기 때문에 의도치 않은 결합(Coupling), 호환성, 빌드 시간 중가 등의 문제가 발생할 수 있다.
+> api 사용시 의존성의 내부 의존성이 가진 리소스에 접근하여 변경이 가능하기 때문에 의도치 않은 결합(Coupling), 호환성, 빌드 시간 증가 등의 문제가 발생할 수 있다.
 {: .prompt-warning }
