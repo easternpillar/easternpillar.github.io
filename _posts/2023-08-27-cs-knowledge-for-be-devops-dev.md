@@ -115,7 +115,7 @@ tags: [ interview, cs, os, network, database ]
 > 캐시 메모리는 지역성의 개념을 띈다.
 > - 시간적 지역성(Temporal Locality): 한 번 접근한 데이터나 명령어가 다시 접근될 가능성이 높다는 원칙
 > - 공간적 지역성(Spatial Locality): 한 번 접근한 데이터나 명령어 근처의 데이터나 명령어에 접근할 가능성이 높다는 원칙
-    > {: .prompt-info }
+> {: .prompt-info }
 
 ##### 페이징(Paging)과 가상 메모리
 
@@ -167,8 +167,8 @@ tags: [ interview, cs, os, network, database ]
 > 2. 네트워크 계층을 인터넷 계층으로
 > 3. 전송 계층을 전송계층으로
 > 4. 세션, 표현, 응용 계층을 응용계층으로
-     > 통합하여 관리한다.
-     > {: .prompt-info }
+> 통합하여 관리한다.
+> {: .prompt-info }
 
 ### Database
 
@@ -208,9 +208,9 @@ tags: [ interview, cs, os, network, database ]
   - Isolation: 동시에 여러 트랜잭션이 실행되더라도, 각 트랜잭션은 서로에게 영향을 주지 않아야 한다.
   - Durability: 트랜잭션이 성공적으로 완료된 후, 그 결과는 영구적으로 반영되어야 한다.
 - 트랜잭션 상태
-  - Active: 트랜잭션이 실행 중인 상태.
+  - Active: 트랜잭션이 실행 중인 상태
   - Partially Committed: 트랜잭션의 마지막 연산까지 성공적으로 수행되었지만, 아직 커밋되지 않은 상태
-  - Committed: 트랜잭션이 성공적으로 커밋된 상태.
+  - Committed: 트랜잭션이 성공적으로 커밋된 상태
   - Failed: 트랜잭션 중 하나 이상의 연산이 실패하여 롤백이 필요한 상태
   - Aborted: 트랜잭션이 실패하여 롤백된 상태
 - 격리 수준(Isolation Levels)
