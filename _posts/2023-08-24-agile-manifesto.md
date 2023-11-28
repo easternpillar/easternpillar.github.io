@@ -1,8 +1,8 @@
 ---
 title: 애자일 매니페스토
 date: 2023-08-24
-categories: [etc.]
-tags: [agile, manifesto]
+categories: [ etc. ]
+tags: [ agile, manifesto ]
 ---
 
 ### 애자일 매니페스토(Agile Manifesto)
