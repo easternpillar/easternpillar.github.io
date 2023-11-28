@@ -23,13 +23,13 @@ tags: [ kubernetes, k8s, devops ]
 > SatefulSet: 기본적인 기능은 ReplicaSet과 동잃하나 상태 유지를 필요로 하는 애플리케이션에 특화되어 고정된 네트워크와 저장소 환경을 구축하기 위해 사용된다.
 {: .prompt-info }
 
-- Pod: 컨테이너 실행의 기본 단위로 컨테이너들의 집합이다. ReplicaSet에 의해 Pod의 복사본이 생성된다.
+![kubernetes-objects-probe](/assets/img/posts/kubernetes-objects-probe.png)
 
-> **Probe**: Pod의 상태를 점검하기 위한 설정으로 HTTP API 성공 여부, TCP 소켓 연결 여부, 컨테이너 내 특정 명령어 성공 여부를 통해 성패를 결정 지을 수 있다. 
-> - startupProbe: Pod 내 서비스가 정상적으로 초기화되었는지 확인하는 설정이며 startupProbe가 성공해야만 readinessProbe와 livenessProbe 점검이 가능하다.
-> - readinessProbe: 시스템 초기화뿐만 아니라 개발자가 의도한 설정이 정상적으로 초기화되었는지 확인하는 설정
-> - livenessProbe: 시스템이 정상 동작중인지 확인하는 설정
-{: .prompt-info }
+- Pod: 컨테이너 실행의 기본 단위로 컨테이너들의 집합이다. ReplicaSet에 의해 Pod의 복사본이 생성된다.
+  - Probe: Pod의 상태를 점검하기 위한 설정으로 HTTP API 성공 여부, TCP 소켓 연결 여부, 컨테이너 내 특정 명령어 성공 여부를 통해 성패를 결정 지을 수 있다. 
+    - startupProbe: Pod 내 서비스가 정상적으로 초기화되었는지 확인하는 설정이며 startupProbe가 성공해야만 readinessProbe와 livenessProbe 점검이 가능하다.
+    - readinessProbe: 시스템 초기화뿐만 아니라 개발자가 의도한 설정이 정상적으로 초기화되었는지 확인하는 설정
+    - livenessProbe: 시스템이 정상 동작중인지 확인하는 설정
 
 > startupProbe와 readinessProbe는 성공할때까지 Service 리소스의 바인딩을 하지 않기 때문에 트래픽을 받을 수 없다.
 {: .prompt-info }
