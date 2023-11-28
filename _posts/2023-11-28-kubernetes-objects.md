@@ -39,7 +39,11 @@ tags: [ kubernetes, k8s, devops ]
 - PV(Persistent Volume): 클러스터 수준의 스토리지 볼륨 오브젝트
 - PVC(Persistent Volume Claim): PV를 사용하기 위한 요청 오브젝트
 - Service: Pod의 네트워크 접근을 제공하는 오브젝트로 로드밸런싱에 사용된다.
-- Secret: 민감 정보를 저장하기 위한 리소스로 클러스터 수준에서 암호화된다.
+- Secret: 민감 정보를 저장하기 위한 오브젝트
+
+> Secret의 값은 암호화 없이 Base64 인코딩되어 저장된다.
+> 따라서, 리소스로 보안을 위해 ETCD에 암호화하여 저장하거나 SealedSecret과 해당 Operator를 이용하여 클러스터 수준 암호화를 진행하는 것을 권장한다. 
+{: .prompt-warning }
 
 <br>
 
