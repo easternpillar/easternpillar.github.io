@@ -6,6 +6,7 @@ tags: [ kubernetes, k8s, devops ]
 ---
 
 > 참조: 쿠버네티스 어나더 클래스(일프로)
+{: .prompt-info }
 
 # 쿠버네티스 오브젝트
 

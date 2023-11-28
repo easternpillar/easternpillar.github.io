@@ -6,7 +6,7 @@ tags: [ devops, k8s, kubernetes, container, docker, linux ]
 ---
 
 > 참조: 쿠버네티스 어나더 클래스(일프로)
-{: .prompt-warning }
+{: .prompt-info }
  
 # 개요
 ![linux-container-history-overall](/assets/img/posts/linux-container-history-overall.png)
