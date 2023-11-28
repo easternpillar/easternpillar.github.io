@@ -5,17 +5,17 @@ categories: [ Spring ]
 tags: [ spring, classpath, gradle, dependency ]
 ---
 
-### Classpath
+# Classpath
 > 사용자 정의 클래스 및 API 패키지의 경로를 지정하는 자바가상머신 또는 자바 컴파일러의 매개 변수
 
-#### 종류
+## 종류
 1. 컴파일 Classpath: 컴파일 시점에만 사용되는 Classpath
 2. 런타임 Classpath: 런타임 시점에만 사용되는 Classpath
 
-### Gradle 의존성
+# Gradle 의존성
 > JVM 기반 애플리케이션은 실행에 필요한 의존성들의 위치를 알아야 리소스를 사용하여 동작할 수 있다. 따라서, 적절한 Classpath 관리가 필요하다.
 
-#### Dependency 종류
+## Dependency 종류
 1. compileOnly: 컴파일 시점에만 사용 가능
 2. runtimeOnly: 런타임 시점에만 사용 가능
 3. implementation: 컴파일, 런타임 시점 모두 사용 가능
