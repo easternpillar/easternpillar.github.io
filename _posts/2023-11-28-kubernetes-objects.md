@@ -1,5 +1,5 @@
 ---
-title: 쿠버네티스 오브젝트와 labels 사용
+title: 쿠버네티스 오브젝트 기초
 date: 2023-11-28
 categories: [ DevOps ]
 tags: [ kubernetes, k8s, devops ]
@@ -12,9 +12,10 @@ tags: [ kubernetes, k8s, devops ]
 
 ![kubernetes-objects](/assets/img/posts/kubernetes-objects.png)
 
-- HPA(Horizontal Pod Autosacler): 리소스 사용량에 따라 파드의 개수를 자동으로 조정하기 위한 오브젝트
+- HPA(Horizontal Pod Autoscaler): 리소스 사용량을 포함한 부하량에 따라 파드의 개수를 자동으로 조정하기 위한 오브젝트
 - Deployment: 파드의 배포를 관리하기 위한 오브젝트로 replicas 속성에 의해 ReplicaSet 오브젝트가 자동 생성되며 배포 방식을 정의할 수 있다.
-  - 배포 방식
+  - 배포 방식: template 속성의 변경이 감지되면 ReplicaSet 오브젝트가 업데이트된다.
+    - Recreate: 서비스의 점진적 배포와 관계없이 동시다발적으로 이전 서비스가 중단되고 새로운 서비스가 배포된다. 
     - Rolling Update: 애플리케이션을 점진적으로 배포하는 방법으로 오브젝트 속성에서 직접 설정할 수 있다.
     - Canary Update: 새 버전을 특정 사용자에게 먼저 배포하는 방법으로 별도의 Deployment를 사용하거나 서비스 메쉬를 통해 구현한다. 
     - Blue-green Update: 새로운 버전의 검증을 목적으로 사용하며 이전 버전(Blue)과 새로운 버전(Green)을 공존한 상태로 두어 새로운 버전을 검증하는 방식으로 별도의 Deployment로 만들어 구현한다.
@@ -35,19 +36,40 @@ tags: [ kubernetes, k8s, devops ]
 {: .prompt-info }
 
 - ConfigMap: 설정 정보와 환경변수를 저장하기 위한 오브젝트
-- Namespace: 리소스를 분리하기 위한 클러스터 수준 오브젝트
-- PV(Persistent Volume): 클러스터 수준의 스토리지 볼륨 오브젝트
-- PVC(Persistent Volume Claim): PV를 사용하기 위한 요청 오브젝트
-- Service: Pod의 네트워크 접근을 제공하는 오브젝트로 로드밸런싱에 사용된다.
-- Secret: 민감 정보를 저장하기 위한 오브젝트
+- Secret: 민감 정보를 저장하기 위한 오브젝트로 사전에 정의된 type도 존재한다.
 
 > Secret의 값은 암호화 없이 Base64 인코딩되어 저장된다.
-> 따라서, 리소스로 보안을 위해 ETCD에 암호화하여 저장하거나 SealedSecret과 해당 Operator를 이용하여 클러스터 수준 암호화를 진행하는 것을 권장한다. 
+> 따라서, 리소스로 보안을 위해 ETCD에 암호화하여 저장하거나 SealedSecret 또는 Vault와 같은 써드파티 도구를 사용하는 등 암호화를 진행하는 것을 권장한다.
 {: .prompt-warning }
+
+- Namespace: 리소스를 분리하기 위한 클러스터 수준 오브젝트
+- PV(Persistent Volume): 클러스터 수준의 스토리지 볼륨 오브젝트
+
+> local 과 nodeAffinity 속성 또는 Pod 오브젝트의 hostPath 속성을 통해 노드를 영구 스토리지처럼 사용할 수 있다.
+> 해당 방법은 로깅과 같이 Pod가 노드의 정보를 조회할 수 있도록 하기 위해 존재하는 속성이고 노드 또는 Pod의 비정상 동작으로 인한 재가동은 데이터의 가용성에 치명적이므로 외부 스토리지 볼륨을 사용하는 것이 권장된다.
+{: .prompt-warning }
+
+- PVC(Persistent Volume Claim): PV를 사용하기 위한 요청 오브젝트
+- Service: Pod의 네트워크 접근을 제공하는 오브젝트로 서비스 레지스트리의 기능과 로드밸런싱 기능을 가진다.
+  - 트래픽 개방 방법: type에 방식을 명시한다. 기본값은 ClusterIP이다.
+    - ClusterIP: 클러스터 내부에서만 통신이 가능하다.
+    - NodePort: ports 속성의 하위 속성인 nodePort에 포트 번호를, targetPort에 접근할 Pod의 포트 번호를 지정하면 노드와 Pod간 포워딩이 가능하다.
+
+> Pod는 생성 시마다 새로 IP를 할당받으므로 Service를 통해 접근되어야 한다.
+{: .prompt-info}
+
+> targetPort의 값은 실제 접근할 Pod의 포트 번호가 변경되면 같이 변경되어야 하는 불편함이 있을 수 있다. 이 때, Pod 오브젝트의 속성인 containers의 ports의 하위 속성으로 name과 containerPort에 이름과 포트번호를 지정한 후 targetPort 값에 해당 name 속성의 값을 지정하면 포트번호가 매핑되므로 Pod의 containerPort만 변경하면 되도록 구성할 수 있다.
+{: .prompt-tip }
+
+> 서비스 디스커버리: Service는 기본적으로 Service 이름을 도메인명으로 내부 DNS에 등록되며 Service 오브젝트의 ports 속성의 하위 속성인 port에 지정한 포트 번호와 함께 사용하여 Pod에 접근 가능하다. 외부 Namespace에서 접근하는 경우 `{서비스 도메인명}.{네임스페이스명}`으로 접근 가능하다.
+{: .prompt-tip }
+
 
 <br>
 
 ## labels, selector, naming
+
+> 쿠버네티스 오브젝트들은 labels와 selector를 통해 상호 매핑이 이루어진다.
 
 ![kubernetes-objects-naming-example](/assets/img/posts/kubernetes-objects-naming-example.png)
 ![kubernetes-objects-labels-and-selector](/assets/img/posts/kubernetes-objects-labels-and-selector.png)
