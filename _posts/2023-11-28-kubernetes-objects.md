@@ -9,7 +9,7 @@ tags: [ kubernetes, k8s, devops ]
 
 ### 쿠버네티스 오브젝트
 
-![kubernetes-objects.png](../assets/img/posts/kubernetes-objects.png)
+![kubernetes-objects](/assets/img/posts/kubernetes-objects.png)
 
 - HPA(Horizontal Pod Autosacler): 리소스 사용량에 따라 파드의 개수를 자동으로 조정하기 위한 오브젝트
 - Deployment: 파드의 배포를 관리하기 위한 오브젝트로 replicas 속성에 의해 ReplicaSet 오브젝트가 자동 생성되며 배포 방식을 정의할 수 있다.
@@ -32,5 +32,5 @@ tags: [ kubernetes, k8s, devops ]
 
 ### labels, selector, naming
 
-![kubernetes-objects-naming-example.png](../assets/img/posts/kubernetes-objects-naming-example.png)
-![kubernetes-objects-labels-and-selector.png](../assets/img/posts/kubernetes-objects-labels-and-selector.png)
+![kubernetes-objects-naming-example](/assets/img/posts/kubernetes-objects-naming-example.png)
+![kubernetes-objects-labels-and-selector](/assets/img/posts/kubernetes-objects-labels-and-selector.png)
