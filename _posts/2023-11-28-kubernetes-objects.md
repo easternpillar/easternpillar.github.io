@@ -20,7 +20,7 @@ tags: [ kubernetes, k8s, devops ]
 - ReplicaSet: 지정된 수의 Pod 복제본이 항상 실행되도록 하기 위한 오브젝트
 
 > SatefulSet: 기본적인 기능은 ReplicaSet과 동잃하나 상태 유지를 필요로 하는 애플리케이션에 특화되어 고정된 네트워크와 저장소 환경을 구축하기 위해 사용된다.
-{: .prompt_info }
+{: .prompt-info }
 
 - Pod: 컨테이너 실행의 기본 단위로 컨테이너들의 집합이다. ReplicaSet에 의해 Pod의 복사본이 생성된다.
 - ConfigMap: 설정 정보와 환경변수를 저장하기 위한 오브젝트
