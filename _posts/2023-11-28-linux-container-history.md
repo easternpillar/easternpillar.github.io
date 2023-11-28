@@ -12,6 +12,8 @@ tags: [ devops, k8s, kubernetes, container, docker, linux ]
 
 ![linux-container-history-overall](/assets/img/posts/linux-container-history-overall.png)
 
+<br>
+
 ## 컨테이너 런타임
 
 ![linux-container-history-container-runtime](/assets/img/posts/linux-container-history-container-runtime.png)

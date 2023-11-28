@@ -31,6 +31,8 @@ tags: [ kubernetes, k8s, devops ]
 - Service: Pod의 네트워크 접근을 제공하는 오브젝트로 로드밸런싱에 사용된다.
 - Secret: 민감 정보를 저장하기 위한 리소스로 클러스터 수준에서 암호화된다.
 
+<br>
+
 ## labels, selector, naming
 
 ![kubernetes-objects-naming-example](/assets/img/posts/kubernetes-objects-naming-example.png)
