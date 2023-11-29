@@ -35,11 +35,13 @@ tags: [ kubernetes, k8s, devops ]
 
 > 파드의 배포를 관리하기 위한 컨트롤러로 replicas 속성에 의해 ReplicaSet 오브젝트가 자동 생성되며 배포 방식을 정의할 수 있다.
 
+![kubernetes-resources-deployment-strategies](/assets/img/posts/kubernetes-resources-deployment-strategies.png)
+
 - 배포 방식: template 속성의 변경이 감지되면 ReplicaSet 오브젝트가 업데이트된다.
   - Recreate: 서비스의 점진적 배포와 관계없이 동시다발적으로 이전 서비스가 중단되고 새로운 서비스가 배포된다.
   - Rolling Update: 애플리케이션을 점진적으로 배포하는 방법으로 오브젝트 속성에서 직접 설정할 수 있다.
-  - Canary Update: 새 버전을 특정 사용자에게 먼저 배포하는 방법으로 별도의 Deployment를 사용하거나 서비스 메쉬를 통해 구현한다.
-  - Blue-green Update: 새로운 버전의 검증을 목적으로 사용하며 이전 버전(Blue)과 새로운 버전(Green)을 공존한 상태로 두어 새로운 버전을 검증하는 방식으로 별도의 Deployment로 만들어 구현한다.
+  - Canary Update: 새 버전을 특정 사용자에게 먼저 배포하여 안정성을 검증하기 위한 방법으로 Ingress 설정이나 서비스 메쉬를 통해 트래픽을 리디렉션하여 구현한다.
+  - Blue-green Update: 새로운 버전의 검증을 목적으로 사용하며 롤백이 굉장히 빠르다는 장점을 가진다. 이전 버전(Blue)과 새로운 버전(Green)을 공존한 상태로 두어 새로운 버전을 검증하는 방식으로 버전마다 별도의 Deployment로 만들어 구현한다.
 
 <br>
 
