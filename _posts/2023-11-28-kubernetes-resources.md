@@ -8,7 +8,7 @@ tags: [ kubernetes, k8s, devops ]
 > 참조: 쿠버네티스 어나더 클래스(일프로)
 {: .prompt-info }
 
-![kubernetes-objects](/assets/img/posts/kubernetes-objects.png)
+![kubermentes-resources](/assets/img/posts/kubernetes-resources.png)
 
 <br>
 
@@ -23,11 +23,15 @@ tags: [ kubernetes, k8s, devops ]
 
 ### HPA(Horizontal Pod Autoscaler)
 
+![kubernetes-resources-hpa](/assets/img/posts/kubernetes-resources-hpa.png)
+
 > 리소스 사용량을 포함한 부하량에 따라 파드의 개수를 자동으로 조정하기 위한 컨트롤러
 
 <br>
 
 ### Deployment
+
+![kubernetes-resources-deployment](/assets/img/posts/kubernetes-resources-deployment.png)
 
 > 파드의 배포를 관리하기 위한 컨트롤러로 replicas 속성에 의해 ReplicaSet 오브젝트가 자동 생성되며 배포 방식을 정의할 수 있다.
 
@@ -57,7 +61,7 @@ tags: [ kubernetes, k8s, devops ]
 
 > 컨테이너 실행의 기본 단위로 컨테이너들의 집합이다. ReplicaSet에 의해 Pod의 복사본이 생성된다.
 
-![kubernetes-objects-probe](/assets/img/posts/kubernetes-objects-probe.png)
+![kubermentes-resources-probe](/assets/img/posts/kubernetes-resources-probe.png)
 
 - Probe: Pod의 상태를 점검하기 위한 설정으로 HTTP API 성공 여부, TCP 소켓 연결 여부, 컨테이너 내 특정 명령어 성공 여부를 통해 성패를 결정 지을 수 있다. 
   - startupProbe: Pod 내 서비스가 정상적으로 초기화되었는지 확인하는 설정이며 startupProbe가 성공해야만 readinessProbe와 livenessProbe 점검이 가능하다.
@@ -94,6 +98,8 @@ tags: [ kubernetes, k8s, devops ]
 
 <br>
 
+![kubernetes-resources-pv-pvc](/assets/img/posts/kubernetes-resources-pv-pvc.png)
+
 ### PV(Persistent Volume)
 > **클러스터 수준**의 스토리지 볼륨 오브젝트
 
@@ -110,6 +116,8 @@ tags: [ kubernetes, k8s, devops ]
 <br>
 
 ### Service
+
+![kubernetes-resources-service](/assets/img/posts/kubernetes-resources-service.png)
 
 > Pod의 네트워크 접근을 제공하는 오브젝트로 서비스 레지스트리의 기능과 로드밸런싱 기능을 가진다.
 
@@ -133,5 +141,5 @@ tags: [ kubernetes, k8s, devops ]
 
 > 쿠버네티스 오브젝트들은 labels와 selector를 통해 상호 매핑이 이루어진다.
 
-![kubernetes-objects-naming-example](/assets/img/posts/kubernetes-objects-naming-example.png)
-![kubernetes-objects-labels-and-selector](/assets/img/posts/kubernetes-objects-labels-and-selector.png)
+![kubermentes-resources-naming-example](/assets/img/posts/kubernetes-resources-naming-example.png)
+![kubermentes-resources-labels-and-selector](/assets/img/posts/kubernetes-resouces-labels-and-selector.png)

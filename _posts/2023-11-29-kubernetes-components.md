@@ -6,6 +6,8 @@ tags: [ kubernetes, k8s, devops ]
 ---
 > 참조: 쿠버네티스 어나더 클래스(일프로)
 
+![kubernetes-components-overall](/assets/img/posts/kubernetes-components-overall.png)
+
 <br>
 
 ## 컨트롤 플레인 구성요소
