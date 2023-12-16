@@ -63,7 +63,7 @@ tags: [ kubernetes, k8s, devops ]
 
 > 컨테이너 실행의 기본 단위로 컨테이너들의 집합이다. ReplicaSet에 의해 Pod의 복사본이 생성된다.
 
-![kubermentes-resources-probe](/assets/img/posts/kubernetes-resources-probe.png)
+![kubernetes-resources-probe](/assets/img/posts/kubernetes-resources-probe.png)
 
 - Probe: Pod의 상태를 점검하기 위한 설정으로 HTTP API 성공 여부, TCP 소켓 연결 여부, 컨테이너 내 특정 명령어 성공 여부를 통해 성패를 결정 지을 수 있다. 
   - startupProbe: Pod 내 서비스가 정상적으로 초기화되었는지 확인하는 설정이며 startupProbe가 성공해야만 readinessProbe와 livenessProbe 점검이 가능하다.
@@ -126,6 +126,7 @@ tags: [ kubernetes, k8s, devops ]
 - 트래픽 개방 방법: type에 방식을 명시한다. 기본값은 ClusterIP이다.
   - ClusterIP: 클러스터 내부에서만 통신이 가능하다.
   - NodePort: ports 속성의 하위 속성인 nodePort에 포트 번호를, targetPort에 접근할 Pod의 포트 번호를 지정하면 노드와 Pod간 포워딩이 가능하다.
+  - LoadBalancer: 별도의 외부 로드 밸런서를 제공하는 클라우드(AWS, Azure, GCP 등) 환경을 고려하여, 해당 로드 밸런서를 클러스터의 서비스로 프로비저닝한다.
 
 > Pod는 생성 시마다 새로 IP를 할당받으므로 Service를 통해 접근되어야 한다.
 {: .prompt-info}
@@ -136,6 +137,8 @@ tags: [ kubernetes, k8s, devops ]
 > 서비스 디스커버리: Service는 기본적으로 Service 이름을 도메인명으로 내부 DNS에 등록되며 Service 오브젝트의 ports 속성의 하위 속성인 port에 지정한 포트 번호와 함께 사용하여 Pod에 접근 가능하다. 외부 Namespace에서 접근하는 경우 `{서비스 도메인명}.{네임스페이스명}`으로 접근 가능하다.
 {: .prompt-tip }
 
+> 외부에 IP를 개방하지 않는 경우 ClusterIP를 사용하는 것이 적절하며, 외부에 별도의 강력한 로드밸런싱 기능을 필요로 하지 않는 노출이 필요한 경우 Ingress와 NodePort를 사용할 수도 있다. 강력한 로드밸런싱이 필요한 대규모 서비스의 경우 LoadBalancer가 적절하다.
+{: .prompt-tip }
 
 <br>
 
