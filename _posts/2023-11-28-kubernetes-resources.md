@@ -148,3 +148,6 @@ tags: [ kubernetes, k8s, devops ]
 
 ![kubermentes-resources-naming-example](/assets/img/posts/kubernetes-resources-naming-example.png)
 ![kubermentes-resources-labels-and-selector](/assets/img/posts/kubernetes-resouces-labels-and-selector.png)
+
+> 파드가 특정 레이블을 가진 노드 그룹에 할당되도록 하기 위해서는 노드에 label을 지정하고 파드 spec의 `nodeSelector` 필드에 해당 노드의 label을 지정하면 된다. 다만, 보다 복잡한 표현식으로 노드를 선택할 수 없으며 이를 가능케 하려면 파드의 `NodeAffinity`를 통해 설정한다.
+{: .prompt-tip }
