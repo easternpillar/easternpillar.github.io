@@ -58,6 +58,9 @@ tags: [ kubernetes, k8s, devops ]
 
 > 노드마다 하나씩 존재하며 백그라운드에서 실행되는 파드를 관리하는 컨트롤러
 
+> 모든 노드에서 실행되므로 kube-scheduler에 의해 스케줄링되지 않는다.
+{: .prompt-tip }
+
 <br>
 
 ## 쿠버네티스 오브젝트
