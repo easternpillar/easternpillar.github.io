@@ -45,6 +45,7 @@ tags: [ kubernetes, k8s, devops ]
       - PreferNoSchedule: 클러스터 내 리소스 상황이나 다른 스케줄링 제약 등의 불가피한 상황이 아니라면 스케줄링되지 않는다.
       - NoExecute: 해당 노드에 Tolerations가 없는 파드는 스케줄링될 수 없으며 기존에 실행되던 파드들도 검열된다. 
   - Tolerations: 파드의 `spec`에 정의하여 노드의 Taints와 동일하게 설정하여 해당 노드에서 실행가는함을 명시한다.
+
 > 마스터 노드는 관리 목적의 구성요소를 제외한 파드들이 실행되지 않는 것이 관례이며 이것은 기본적으로 Taints에 의해 기본값으로 설정되어 있다.
 {: .prompt-info }
 
