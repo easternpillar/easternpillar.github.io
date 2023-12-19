@@ -151,6 +151,29 @@ tags: [ kubernetes, k8s, devops ]
 
 <br>
 
+### PriorityClass
+
+> 스케줄링 큐에서 파드의 스케줄링 우선순위를 정의하는 리소스이다.
+
+<br>
+
+### KubeSchedulerConfiguration
+
+> kube-scheduler 설정을 정의하고 구성하는 리소스
+
+- Profile을 통해 스케줄러들을 그룹화하여 관리할 수 있다.
+- 각 Profile에 따라 스케줄러의 각 과정에서의 플러그인 사용 여부를 결정 지을 수 있다.
+
+<br>
+
+## 기타 리소스
+
+### Event
+
+> 클러스터의 작업 및 동작과 관련된 정보가 기록된 리소스이다.
+
+<br>
+
 ## labels, selector, naming
 
 > 쿠버네티스 오브젝트들은 labels와 selector를 통해 상호 매핑이 이루어진다.

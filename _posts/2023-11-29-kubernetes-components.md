@@ -38,7 +38,7 @@ tags: [ kubernetes, k8s, devops ]
 > 파드의 spec 중 `nodeName`을 통해 어떤 노드에 해당 파드를 실행할지 결정하는데, 이 필드가 존재하지 않더라도 스케줄러에 의해 자동으로 노드에 배치된다. 만약, 스케줄러가 없다면 이 필드를 명시하거나 `Binding` 리소스를 정의하여 실행될 노드와 결합해야 한다.
 {: .prompt-info }
 
-- `Taints`와 `Tolerations`
+- Taints와 Tolerations
   - Taints: 노드에 파드가 스케줄링되는 것을 제어하는데 사용되며 해당 노드의 `Taints`를 `Tolerations`로 가지지 않는 파드는 해당 노드에 스케줄링될 수 없다.
     - Effect 유형
       - NoSchedule: 해당 노드에 `Tolerations`가 없는 파드가 스케줄링되지 않는다.
@@ -56,6 +56,16 @@ tags: [ kubernetes, k8s, devops ]
 {: .prompt-info }
 
 > nodeName에 설정된 경우, 다른 스케줄링 설정은 무시되며 설정된 노드에서 반드시 실행된다.
+{: .prompt-info }
+
+> 파드 `spec`의 `scheulderName` 필드를 통해 어떤 스케줄러에 의해 스케줄링 될지 명시할 수 있으며, `priorityClassName` 필드를 통해 스케줄링 우선순위를 지정할 수 있다.
+{: .prompt-info }
+
+> 스케줄링 순서: 각 과정에서 Extension과 플러그인을 통해 작업을 수행한다.
+> 1. Scheduling Queue: 스케줄링 큐에 노드에 배포할 파드들을 우선순위에 맞게 삽입한다.
+> 2. Filtering: 하드웨어 자원, 노드 명시 등의 조건을 고려하여 배포 가능한 노드를 선별한다.
+> 3. Scoring: 노드의 부하를 고려하여 배포할 노드를 결정한다.
+> 4. Binding: 해당 노드에 바인딩한다.
 {: .prompt-info }
 
 <br>
@@ -82,7 +92,7 @@ tags: [ kubernetes, k8s, devops ]
 
 > 각 노드에서 실행되어 컨테이너 런타임을 제어하여 파드의 생명주기를 관리하는 구성요소
 
-- 정적 파드(Static Pod): kubelet이 직접 관리하는 파드로 kube-apiserver를 통하지 않고 로컬로 구성된 manifest 파일을 통해 직접 관리된다.
+- 정적 파드(Static Pod): kubelet이 직접 관리하는 파드로 kube-apiserver를 통하지 않고 로컬로 구성된 manifest 파일을 통해 직접 관리된다. 정적 파드는 해당 머신에서 데몬으로 동작한다.
 
 > 마스터 노드의 컨트롤 플레인 구성요소들은 정적 파드이며 마스터 노드의 kubelet과 로컬 디렉토리에 존재하는 manifest 파일에 의해 유지된다. 따라서, 마스터 노드의 kubelet이 정상적으로 동작하지 않으면 컨트롤 플레인 구성요소가 유지되지 못할 수 있고 클러스터 전체에 치명적인 영향을 미칠 수 있다.
 {: .prompt-danger }
