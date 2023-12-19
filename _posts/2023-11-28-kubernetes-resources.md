@@ -49,7 +49,7 @@ tags: [ kubernetes, k8s, devops ]
 
 > 지정된 수의 Pod 복제본이 항상 실행되도록 하기 위한 컨트롤러
 
-> SatefulSet: 기본적인 기능은 ReplicaSet과 동잃하나 상태 유지를 필요로 하는 애플리케이션에 특화되어 고정된 네트워크와 저장소 환경을 구축하기 위해 사용된다.
+> StatefulSet: 기본적인 기능은 ReplicaSet과 동일하나 상태 유지를 필요로 하는 애플리케이션에 특화되어 고정된 네트워크와 저장소 환경을 구축하기 위해 사용된다.
 {: .prompt-info }
 
 <br>
