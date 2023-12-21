@@ -33,16 +33,19 @@ tags: [ kubernetes, k8s, devops ]
 
 ![kubernetes-resources-deployment](/assets/img/posts/kubernetes-resources-deployment.png)
 
-> 파드의 배포를 관리하기 위한 컨트롤러로 replicas 속성에 의해 ReplicaSet 오브젝트가 자동 생성되며 배포 방식을 정의할 수 있다.
+> 파드의 배포를 관리하기 위한 컨트롤러로 replicas 속성에 의해 ReplicaSet 오브젝트가 자동 생성되며 배포 전략을 설정할 수 있다.
 
 ![kubernetes-resources-deployment-strategies](/assets/img/posts/kubernetes-resources-deployment-strategies.png)
 
 - 배포 방식: template 속성의 변경이 감지되면 ReplicaSet 오브젝트가 업데이트된다.
   - Recreate: 서비스의 점진적 배포와 관계없이 동시다발적으로 이전 서비스가 중단되고 새로운 서비스가 배포된다.
-  - Rolling Update: 애플리케이션을 점진적으로 배포하는 방법으로 오브젝트 속성에서 직접 설정할 수 있다.
+  - Rolling Update: 애플리케이션을 점진적으로 배포하는 방법으로 오브젝트 속성에서 직접 설정할 수 있고 **기본값** 전략이다.
   - Canary Update: 새 버전을 특정 사용자에게 먼저 배포하여 안정성을 검증하기 위한 방법으로 Ingress 설정이나 서비스 메쉬를 통해 트래픽을 리디렉션하여 구현한다.
   - Blue-green Update: 새로운 버전의 검증을 목적으로 사용하며 롤백이 굉장히 빠르다는 장점을 가진다. 이전 버전(Blue)과 새로운 버전(Green)을 공존한 상태로 두어 새로운 버전을 검증하는 방식으로 버전마다 별도의 Deployment로 만들어 구현한다.
 
+> Deployment의 배포는 Rollout 발생 시 Revision을 통해 배포의 히스토리가 관리되기 때문에 롤백이 용이하다.
+{: .prompt-info }
+  
 <br>
 
 ### ReplicaSet
@@ -91,15 +94,23 @@ tags: [ kubernetes, k8s, devops ]
 
 > 설정 정보와 환경변수를 저장하기 위한 오브젝트
 
+- 일반적인 리소스가 apiVersion, kind, metadata, spec으로 구성된 것과는 달리 spec 대신 data가 존재한다.
+
 <br>
 
 ### Secret
 
 > 민감 정보를 저장하기 위한 오브젝트로 사전에 정의된 type도 존재한다.
 
+- `ConfigMap`과 동일한 포맷을 가진다.
+
+> 파드 생성 시 Secret 정보가 필요한 경우 kubelet이 마스터 노드의 etcd에 정보를 요청하고 이를 파드가 실행되는 노드의 tmpfs에 저장한다. tmpfs는 리눅스 커널이 기본적으로 제공하는 메모리기반 파일시스템이며 이를 통해 민감 데이터를 보다 안전하게 저장할 수 있다.
+{: .prompt-info }
+
 > Secret의 값은 암호화 없이 Base64 인코딩되어 저장된다.
 > 따라서, 리소스로 보안을 위해 ETCD에 암호화하여 저장하거나 SealedSecret 또는 Vault와 같은 써드파티 도구를 사용하는 등 암호화를 진행하는 것을 권장한다.
-{: .prompt-warning }
+{: .prompt-danger }
+
 
 <br>
 
