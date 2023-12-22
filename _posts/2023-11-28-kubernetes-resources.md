@@ -127,7 +127,7 @@ tags: [ kubernetes, k8s, devops ]
 
 > local 과 nodeAffinity 속성 또는 Pod 오브젝트의 hostPath 속성을 통해 노드를 영구 스토리지처럼 사용할 수 있다.
 > 해당 방법은 로깅과 같이 Pod가 노드의 정보를 조회할 수 있도록 하기 위해 존재하는 속성이고 노드 또는 Pod의 비정상 동작으로 인한 재가동은 데이터의 가용성에 치명적이므로 외부 스토리지 볼륨을 사용하는 것이 권장된다.
-{: .prompt-warning }
+{: .prompt-danger }
 
 <br>
 
