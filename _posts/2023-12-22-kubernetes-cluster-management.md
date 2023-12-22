@@ -51,12 +51,16 @@ tags: [ devops, k8s, kubernetes, cluster, management , version ]
 
 > 크게 리소스 설정, etcd,PV가 백업 대상으로 볼 수 있다.
 
+<br>
+
 ### 리소스 설정
 
 - 백업 방법
   1. git을 통한 형상 관리 도구를 이용하여 백업
   2. kube-apiserver에 모든 리소스 정보를 요청하여 파일 형태로 백업
   3. 백업 솔루션 도입
+
+<br>
 
 ### etcd
 
