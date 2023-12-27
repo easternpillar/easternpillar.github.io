@@ -14,7 +14,7 @@ tags: [ devops, k8s, kubernetes, cluster, management , version ]
 > 소프트웨어 버전 관리 관례: v{major}.{minor}.{patch}
 > 1. Major: 보통 API 호환성에 영향이 있는 경우 발생하는 버전
 > 2. Minor: 기능 추가, API 호환이 되는 변경이 있는 경우 발생하는 버전
-> 3. Patch: 버그 수정이나 성능 개선과 같이 소규모 변경이 ㅇ있는 경우 발생하는 버전
+> 3. Patch: 버그 수정이나 성능 개선과 같이 소규모 변경이 있는 경우 발생하는 버전
 {: .prompt-info }
 
 > 컨트롤 플레인 구성요소들은 각각의 버전간 호환성이 관리되는 규칙이 있고 kube-apiserver를 기준으로 다음과 같이 관리된다.
