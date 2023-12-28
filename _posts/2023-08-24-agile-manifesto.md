@@ -1,7 +1,7 @@
 ---
 title: 애자일 매니페스토
 date: 2023-08-24
-categories: [ CS(Computer Science, SE(Software Engineering) ]
+categories: [ CS(Computer Science), SE(Software Engineering) ]
 tags: [ agile, manifesto ]
 ---
 
