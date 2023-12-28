@@ -1,7 +1,7 @@
 ---
 title: Classpath와 Gradle 의존성
 date: 2023-08-25
-categories: [ Spring ]
+categories: [ Web, Spring ]
 tags: [ spring, classpath, gradle, dependency ]
 ---
 
