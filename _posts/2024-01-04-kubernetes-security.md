@@ -16,6 +16,7 @@ tags: [ devops, kubernetes, k8s, security, authentication. authorization ]
   - 인증서 기반: TLS 인증서를 이용한 인증
   - SA(Service Account) 기반
   - 기타 써드 파티 기반: OpenID, LDAP, Kerberos, 웹훅 등을 이용한 인증
+
 > 자체서명된 CA 인증서 발급을 통해 상호 통신하며 ETCD와 그 밖의 구성요소 간에 별도 CA를 구축하기도 한다.
 {: .prompt-info }
 

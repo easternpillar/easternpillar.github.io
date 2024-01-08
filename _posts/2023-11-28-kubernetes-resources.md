@@ -129,11 +129,28 @@ tags: [ kubernetes, k8s, devops ]
 > 해당 방법은 로깅과 같이 Pod가 노드의 정보를 조회할 수 있도록 하기 위해 존재하는 속성이고 노드 또는 Pod의 비정상 동작으로 인한 재가동은 데이터의 가용성에 치명적이므로 외부 스토리지 볼륨을 사용하는 것이 권장된다.
 {: .prompt-danger }
 
+- 접근 모드: PV가 허용하는 접근 모드를 accessModes 필드를 통해 설정한다.
+  - ReadWriteOnce: 볼륨을 하나의 노드에서 읽기/쓰기 모드로 마운트할 수 있으며 단일 노드인 경우 적합하다.
+  - ReadOnlyMany: 볼륨을 여러 노드에서 읽기 전용 모드로 마운트 수 있으며 여러 파드가 동시에 데이터를 읽을 수 있지만 아무도 변경할 수 없다.
+  - ReadWriteMany: 볼륨을 여러 노드에서 읽고 쓸 수 있다.
+- PV 재요청 정책: PVC 오브젝트의 persistentVolumeReclaimPolicy 필드를 통해 설정할 수 있다.
+  - Retain: 바인딩된 PVC가 제거되더라도 PV는 남아있다.
+  - Delete: PVC가 제거되면 PV도 사라진다.
+
 <br>
 
 ### PVC(Persistent Volume Claim)
 
-> PV를 사용하기 위한 요청 오브젝트
+> PV에 바인딩하기 위한 사용하기 위한 네임스페이스 수준의 오브젝트
+
+<br>
+
+### StorageClass
+
+> PVC에 설정한 PV 스토리지 유형을 동적으로 프로비저닝하여 해당 스토리지가 실제 생성되도록 정의하기 위한 오브젝트
+
+> 다양한 스토리지 솔루션을 제공하며 솔루션마다 API 인자가 상이할 수 있으므로 문서를 참조해야 한다.
+{: .prompt-tip }
 
 <br>
 
