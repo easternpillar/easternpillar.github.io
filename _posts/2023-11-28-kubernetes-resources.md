@@ -8,7 +8,7 @@ tags: [ kubernetes, k8s, devops ]
 > 참조: 쿠버네티스 어나더 클래스(일프로)
 {: .prompt-info }
 
-![kubermentes-resources](/assets/img/posts/kubernetes-resources.png)
+![kubernetes-resources](/assets/img/posts/kubernetes-resources.png)
 
 <br>
 
@@ -175,9 +175,33 @@ tags: [ kubernetes, k8s, devops ]
 - Profile을 통해 스케줄러들을 그룹화하여 관리할 수 있다.
 - 각 Profile에 따라 스케줄러의 각 과정에서의 플러그인 사용 여부를 결정 지을 수 있다.
 
+### Role과 RoleBinding
+
+> RBAC 인가에서 사용되며 Role 오브젝트에 역할이 가질 API 그룹, 그룹 내 리소스, 리소스의 Verb 권한을 명시하고 RoleBinding을 통해 사용자에게 Role을 부여한다. 
+
+> Role과 RoleBinding은 특정 네임스페이스 수준에서 사용된다. 클러스터 수준에서의 RBAC는 `ClusterRole`과 `ClusterRoleBinding` 오브젝트를 통해 구현한다.
+{: .prompt-info }
+
+<br>
+
+### ServiceAccount
+
+> 사용자(사람)가 아닌 애플리케이션(머신)이 쿠버네티스 API를 사용하기 위한 인증 수단이다.
+
+> 클러스터 외부에서 해당 API를 접근하기 위해서는 수동으로 토큰을 전달해야하지만 클러스터 내부 애플리케이션은 자동으로 토큰을 볼륨 마운트하여 사용할 수 있다.
+{: .prompt-info }
+> 자동으로 생성되는 Secret 오브젝트의 Token은 ServiceAccount가 존재하는한 계속 유효한 상태이므로 보안에 취약할 수 있다. 때문에, 쿠버네티스 v1.24 부터는 토큰을 자동 생성하지 않고 토큰 발급 API를 통해 발급하며 토큰의 만료기간을 포함하여 필요에 따라 세부 설정된 토큰을 발급하게 된다.
+{: .prompt-warning }
+
+### NetworkPolicy
+
+> 컨테이너의 Ingress/Egress 네트워크 정책을 제어하기 위한 오브젝트
+
 <br>
 
 ## 기타 리소스
+
+<br>
 
 ### Event
 
@@ -189,8 +213,8 @@ tags: [ kubernetes, k8s, devops ]
 
 > 쿠버네티스 오브젝트들은 labels와 selector를 통해 상호 매핑이 이루어진다.
 
-![kubermentes-resources-naming-example](/assets/img/posts/kubernetes-resources-naming-example.png)
-![kubermentes-resources-labels-and-selector](/assets/img/posts/kubernetes-resouces-labels-and-selector.png)
+![kubernetes-resources-naming-example](/assets/img/posts/kubernetes-resources-naming-example.png)
+![kubernetes-resources-labels-and-selector](/assets/img/posts/kubernetes-resouces-labels-and-selector.png)
 
 > 파드가 특정 레이블을 가진 노드 그룹에 할당되도록 하기 위해서는 노드에 label을 지정하고 파드 spec의 `nodeSelector` 필드에 해당 노드의 label을 지정하면 된다. 다만, 보다 복잡한 표현식으로 노드를 선택할 수 없으며 이를 가능케 하려면 파드의 `NodeAffinity`를 통해 설정한다.
 {: .prompt-tip }
