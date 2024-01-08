@@ -11,7 +11,7 @@ tags: [ devops, kubernetes, k8s, storage, volume ]
 
 > 이미지 및 컨테이너의 파일 시스템 레이어를 관리하기 위한 도구로 이미지 빌드, 레이어 캐싱, 데이터 Read/Write 최적화에 관여한다.
 
-> __도커 저장소__
+> __도커 저장소__<br>
 > 도커를 사용하여 이미지를 생성할 때 사용하는 Dockerfile은 Layered Architecture로 이루어져 있으며 스크립트의 각 단계(Layer)가 호스트 파일시스템에 캐싱되어 동일한 스크립트를 사용하는 다른 이미지 생성에 재사용이 가능하다.
 > 이렇게 빌드된 이미지는 Read-only의 불변성 특성을 가지며 이를 컨테이너로 실행 후 컨테이너 내에서 변경이 발생하면 Copy-on-Write 방식으로 동작한다. 
 {: .prompt-info }
