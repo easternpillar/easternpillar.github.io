@@ -17,6 +17,8 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 
 > 물리적 회선의 길이에 따라 약해진 신호를 증폭시키기 위한 장치
 
+<br>
+
 > 이외의 장치들에 기본적으로 탑재되므로 현재는 잘 사용되지 않는다.
 {: .prompt-info }
 
@@ -26,6 +28,9 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 
 > 여러 장치를 물리적으로 연결하고 신호를 모든 포트로 증폭하는 역할을 하는 장치
 
+<br>
+
+
 > **충돌 도메인(Collision Domain)** 분리가 없어 데이터의 동시 전송을 지원하지 않는다.
 {: prompt-info }
 
@@ -34,6 +39,9 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 ### 브리지
 
 > 네트워크 세그먼트를 연결하기 위한 장치
+
+<br>
+
 
 > 네트워크 세그먼트는 하나의 네트워크를 구성하는 작은 네트워크를 말한다.
 {: prompt-info }
@@ -47,6 +55,8 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 
 > 스위치의 발전으로 인해 잘 사용되지 않는다.
 {: prompt-info }
+
+<br>
 
 > 리눅스 커널에서 제공하는 리눅스 브리지는 가상 네트워크 환경에서의 네트워크간 연결 및 포워딩을 지원하기 위한 스위치 역할을 하도록 사용된다.
 {: prompt-tip }
@@ -66,6 +76,8 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 > 전통적인 스위치(L2 스위치)는 MAC 주소를 알기위해 할당된 네트워크 인터페이스의 IP 주소와 ARP 프로토콜을 이용하여 통신하고자 하는 장치의 MAC 주소를 먼저 알아낸 후, 실제 데이터 통신이 이루어진다.  
 {: .prompt-info }
 
+<br>
+
 > L3 스위치는 LAN(Local Area Network) 환경에서 사용되며 라우터는 WAN(Wide Area Network) 환경에서 사용된다. 일반적으로 하드웨어 기반의 L3 스위치가 처리속도는 소프트웨어 기반의 라우터보다 빠르지만 라우터는 보다 다양한 라우팅 방식과 프로토콜, 보안 및 고급 트래픽 관리 기능을 제공한다.
 {: .prompt-info }
 
@@ -74,6 +86,8 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 ### 라우터
 
 > 네트워크간 데이터 전송을 위한 경로(Route)를 설정하는 소프트웨어 기반 장치
+
+<br>
 
 > L3 스위치와 비슷한 기능을 하며 소프트웨어적으로 부가적인 기능을 제공하여 그러한 기능이 필요한 경우 사용된다.
 {: prompt-tip }
