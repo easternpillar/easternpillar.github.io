@@ -32,7 +32,7 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 
 
 > **충돌 도메인(Collision Domain)** 분리가 없어 데이터의 동시 전송을 지원하지 않는다.
-{: prompt-info }
+{: .prompt-info }
 
 <br>
 
@@ -44,7 +44,7 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 
 
 > 네트워크 세그먼트는 하나의 네트워크를 구성하는 작은 네트워크를 말한다.
-{: prompt-info }
+{: .prompt-info }
 
 - 기능
   - Learning: 연결된 장치의 MAC 주소를 저장
@@ -54,12 +54,12 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
   - Aging: 일정 시간동안 저장된 주소로 수신되는 데이터가 없는 경우 목록에서 삭제
 
 > 스위치의 발전으로 인해 잘 사용되지 않는다.
-{: prompt-info }
+{: .prompt-info }
 
 <br>
 
 > 리눅스 커널에서 제공하는 리눅스 브리지는 가상 네트워크 환경에서의 네트워크간 연결 및 포워딩을 지원하기 위한 스위치 역할을 하도록 사용된다.
-{: prompt-tip }
+{: .prompt-tip }
 
 <br>
 
@@ -90,7 +90,7 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 <br>
 
 > L3 스위치와 비슷한 기능을 하며 소프트웨어적으로 부가적인 기능을 제공하여 그러한 기능이 필요한 경우 사용된다.
-{: prompt-tip }
+{: .prompt-tip }
 
 <br>
 
