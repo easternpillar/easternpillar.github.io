@@ -1,7 +1,7 @@
 ---
 title: 쿠버네티스 구성요소
 date: 2023-11-29
-categories: [ DevOps ]
+categories: [ DevOps, k8s(kubernetes) ]
 tags: [ kubernetes, k8s, devops ]
 ---
 > 참조: 쿠버네티스 어나더 클래스(일프로)

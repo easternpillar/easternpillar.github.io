@@ -1,7 +1,7 @@
 ---
 title: 쿠버네티스 리소스
 date: 2023-11-28
-categories: [ DevOps ]
+categories: [ DevOps, k8s(kubernetes) ]
 tags: [ kubernetes, k8s, devops ]
 ---
 

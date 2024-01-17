@@ -1,7 +1,7 @@
 ---
 title: Linux OS, Container, Container Orchestration 기술 변천
 date: 2023-11-28
-categories: [ DevOps ]
+categories: [ DevOps, k8s(kubernetes) ]
 tags: [ devops, k8s, kubernetes, container, docker, linux ]
 ---
 

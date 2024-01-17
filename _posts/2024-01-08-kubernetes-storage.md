@@ -1,7 +1,7 @@
 ---
 title: 쿠버네티스 저장소
 date: 2024-01-08
-categories: [ DevOps ]
+categories: [ DevOps, k8s(kubernetes) ]
 tags: [ devops, kubernetes, k8s, storage, volume ]
 ---
 

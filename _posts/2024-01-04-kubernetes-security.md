@@ -1,7 +1,7 @@
 ---
 title: 쿠버네티스 보안
 date: 2024-01-03
-categories: [ DevOps ]
+categories: [ DevOps, k8s(kubernetes) ]
 tags: [ devops, kubernetes, k8s, security, authentication, authorization ]
 ---
 

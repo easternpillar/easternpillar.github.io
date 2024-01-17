@@ -1,7 +1,7 @@
 ---
 title: 쿠버네티스 클러스터 관리
 date: 2023-12-22
-categories: [ DevOps ]
+categories: [ DevOps, k8s(kubernetes) ]
 tags: [ devops, k8s, kubernetes, cluster, management , version ]
 ---
 

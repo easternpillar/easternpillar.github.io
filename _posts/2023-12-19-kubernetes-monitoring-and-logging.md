@@ -1,7 +1,7 @@
 ---
 title: 쿠버네티스 모니터링과 로깅
 date: 2023-12-19
-categories: [ DevOps ]
+categories: [ DevOps, k8s(kubernetes) ]
 tags: [ devops, k8s, kubernetes, monitoring, logging ]
 ---
 
