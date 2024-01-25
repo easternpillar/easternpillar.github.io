@@ -42,7 +42,6 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 
 <br>
 
-
 > 네트워크 세그먼트는 하나의 네트워크를 구성하는 작은 네트워크를 말한다.
 {: .prompt-info }
 
