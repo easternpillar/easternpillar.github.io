@@ -105,3 +105,10 @@ tags: [ kubernetes, k8s, devops ]
 ### kube-proxy
 
 > 각 노드의 네트워크 프록시 역할을 담당하며 네트워크 규칙을 관리하고 제어하는 구성요소
+
+> Service 리소스 생성시 kube-proxy는 Service 리소스에 정의된 네트워크 개방 방식에 따라 네트워크 정책을 노드에 설정한다.
+{: .prompt-info }
+
+- 모드
+  - iptables: 서비스에 대한 요청 발생시 iptables 규칙이 이를 감지하고 파드의 IP 주소로 트래픽을 리다이렉트한다.
+  - IPVS(IP Virtual Server): 커널 내 로드 밸런싱 기능을 구현하기 위해 L4 스위치 기술을 사용하며 이를 통해 고급 로드 밸런싱 기능을 제공한다.

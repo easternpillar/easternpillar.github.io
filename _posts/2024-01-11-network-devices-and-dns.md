@@ -91,6 +91,7 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
 > L3 스위치와 비슷한 기능을 하며 소프트웨어적으로 부가적인 기능을 제공하여 그러한 기능이 필요한 경우 사용된다.
 {: .prompt-tip }
 
+> 라우터는 외부 네트워크와 통신하기 위한 게이트웨이 역할을 하며 Private IP의 중복을 방지하기 위한 NAT 기능을 포함한다.
 <br>
 
 ## DNS
@@ -103,3 +104,12 @@ tags: [ interview, cs, network, repeater, hub, bridge, switch, router, dns ]
   - Second-Level Domain: TLD 왼쪽 부분
   - Subdomain: SLD 왼쪽 부분으로 섹션 식별용으로 사용된다.
   - Hostname: 도메인명의 가장 왼쪽 부분으로 특정 컴퓨터 또는 자원을 식별용으로 사용된다.
+- 레코드: 도메인명과 IP 주소 변환에 사용되는 규칙 및 지시사항
+  - A(Address): 도메인명을 IPv4 주소로 매핑
+  - AAAA(IPv6 Address): 도메인명을 IPv4 주소로 매핑
+  - CNAME(Canonical Name): 한 도메인명을 다른 도메인명으로 매핑
+  - MX(Mail Exchange): 도메인의 이메일을 처리할 메일 서버 주소와 우선순위 지정
+  - NS(Name Server): DNS 정보를 관리하는 DNS 서버 지정
+  - PTR(Pointer): IP 주소를 도메인명으로 매핑
+  - SRV(Service): 특정 서비스를 제공하는 서버의 위치와 포트 정보, 우선순위 및 가중치 지정
+  - TXT(Text): 도메인에 대한 임의 텍스트 정보를 저장하여 다양한 목적으로 사용

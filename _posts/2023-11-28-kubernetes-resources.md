@@ -66,6 +66,18 @@ tags: [ kubernetes, k8s, devops ]
 
 <br>
 
+### Ingress
+
+> Ingress 오브젝트의 설정을 적용하여 리버스 프록시 서버 또는 로드밸런서의 기능을 하는 컨트롤러
+
+> nginx와 같은 리버스 프록시 서버 또는 로드 밸런서 도구의 Deployment 형태이며 Ingress 오브젝트의 설정을 구현하기 위해 반드시 필요하다.
+{: .prompt-warning }
+
+> Ingress 컨트롤러를 외부에 개방하기 위한 Service 리소스 생성도 필요하다.
+{: .prompt-tip }
+
+<br>
+
 ## 쿠버네티스 오브젝트
 > 하나의 인프라 개념으로 단독 기능을 하는 리소스
 
@@ -165,19 +177,36 @@ tags: [ kubernetes, k8s, devops ]
   - NodePort: ports 속성의 하위 속성인 nodePort에 포트 번호를, targetPort에 접근할 Pod의 포트 번호를 지정하면 노드와 Pod간 포워딩이 가능하다.
   - LoadBalancer: 별도의 외부 로드 밸런서를 제공하는 클라우드(AWS, Azure, GCP 등) 환경을 고려하여, 해당 로드 밸런서를 클러스터의 서비스로 프로비저닝한다.
 
-> Pod는 생성 시마다 새로 IP를 할당받으므로 Service를 통해 접근되어야 한다.
+> Pod는 기본적으로 생성 시마다 동적으로 새로운 IP를 할당받으므로 Service를 통해 접근되어야 한다.
 {: .prompt-info}
 
 > targetPort의 값은 실제 접근할 Pod의 포트 번호가 변경되면 같이 변경되어야 하는 불편함이 있을 수 있다. 이 때, Pod 오브젝트의 속성인 containers의 ports의 하위 속성으로 name과 containerPort에 이름과 포트번호를 지정한 후 targetPort 값에 해당 name 속성의 값을 지정하면 포트번호가 매핑되므로 Pod의 containerPort만 변경하면 되도록 구성할 수 있다.
 {: .prompt-tip }
 
-> 서비스 디스커버리: Service는 기본적으로 Service 이름을 도메인명으로 내부 DNS에 등록되며 Service 오브젝트의 ports 속성의 하위 속성인 port에 지정한 포트 번호와 함께 사용하여 Pod에 접근 가능하다. 외부 Namespace에서 접근하는 경우 `{서비스 도메인명}.{네임스페이스명}`으로 접근 가능하다.
+> **서비스 디스커버리:** 서비스에 VIP(Virtual IP)를 선언하고 이 VIP(=ClusterIP 모드의 IP)를 이용한 네트워크 정책이 설정된다.
+> 쿠버네티스 DNS는 kube-system 네임스페이스에서 Deployment에 의해 생성된 파드 형태로 존재하며 특정 쿠버네티스 네임스페이스에 국한되지 않고 클러스터 수준으로 존재한다.
+> 때문에 단일 접근점을 위한 Service 리소스가 기본적으로 생성되며 도메인명은 기본적으로 `{서비스명}.{네임스페이스명}.svc.{클러스터 도메인}` 
+> 또는 `<파드IP 대시(-)로 구분>.<네임스페이스>.pod.<클러스터 도메인>` 형태이다.
 {: .prompt-tip }
 
 > 외부에 IP를 개방하지 않는 경우 ClusterIP를 사용하는 것이 적절하며, 외부에 별도의 강력한 로드밸런싱 기능을 필요로 하지 않는 노출이 필요한 경우 Ingress와 NodePort를 사용할 수도 있다. 강력한 로드밸런싱이 필요한 대규모 서비스의 경우 LoadBalancer가 적절하다.
+> 이 때, LoadBalancer의 경우에는 클라우드 플랫폼이 제공하는 로드밸런싱 기능을 통해 포트 번호 없이 특정 도메인 접근을 애플리케이션까지 포워딩 해주지만 NodePort는 nginx와 같은 별도 리버스 프록시 서버나 로드밸런서,Ingress 설정 등을 구축해야 외부 사용자가 순수 도메인만으로 접근가능하도록 구성할 수 있다.
 {: .prompt-tip }
 
 <br>
+
+### Ingress
+
+> 외부 트래픽을 특정 서비스 리소스로 라우팅하기 위한 규칙을 정의하는 오브젝트
+
+- 주요 기능: 외부 접근에 관한 트래픽 제어
+  - 호스트 기반 라우팅
+  - 경로 기반 라우팅
+  - TLS 지원
+  - 로드 밸런싱
+
+<br>
+
 
 ### PriorityClass
 
