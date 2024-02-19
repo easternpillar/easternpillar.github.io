@@ -49,7 +49,7 @@ tags: [ devops, k8s, kubernetes, cluster, management , version ]
 
 ## 클러스터 백업
 
-> 크게 리소스 설정, etcd,PV가 백업 대상으로 볼 수 있다.
+> 크게 리소스 설정, etcd, PV가 백업 대상으로 볼 수 있다.
 
 <br>
 
