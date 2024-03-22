@@ -108,6 +108,9 @@ tags: [ kubernetes, k8s, devops ]
 
 - 일반적인 리소스가 apiVersion, kind, metadata, spec으로 구성된 것과는 달리 spec 대신 data가 존재한다.
 
+> 설정 파일 적용 우선순위: Deployment에 정의된 환경변수 > ConfigMap에 정의된 값 > 이미지에 설정된 값
+{: prompt-tip }
+
 <br>
 
 ### Secret
@@ -186,6 +189,8 @@ tags: [ kubernetes, k8s, devops ]
   - ClusterIP: 클러스터 내부에서만 통신이 가능하다.
   - NodePort: ports 속성의 하위 속성인 nodePort에 포트 번호를, targetPort에 접근할 Pod의 포트 번호를 지정하면 노드와 Pod간 포워딩이 가능하다.
   - LoadBalancer: 별도의 외부 로드 밸런서를 제공하는 클라우드(AWS, Azure, GCP 등) 환경을 고려하여, 해당 로드 밸런서를 클러스터의 서비스로 프로비저닝한다.
+  - ExternalName: 외부 도메인 접근을 위한 별칭 기능을 하여 클러스터 내부에서 서비스명을 통해 접근시 외부 도메인 주소로 매핑되어 외부로 트래픽이 포워딩된다.
+- 지원 프로토콜: TCP/UDP
 
 > Pod는 기본적으로 생성 시마다 동적으로 새로운 IP를 할당받으므로 Service를 통해 접근되어야 한다.
 {: .prompt-info}
@@ -202,6 +207,15 @@ tags: [ kubernetes, k8s, devops ]
 > 외부에 IP를 개방하지 않는 경우 ClusterIP를 사용하는 것이 적절하며, 외부에 별도의 강력한 로드밸런싱 기능을 필요로 하지 않는 노출이 필요한 경우 Ingress와 NodePort를 사용할 수도 있다. 강력한 로드밸런싱이 필요한 대규모 서비스의 경우 LoadBalancer가 적절하다.
 > 이 때, LoadBalancer의 경우에는 클라우드 플랫폼이 제공하는 로드밸런싱 기능을 통해 포트 번호 없이 특정 도메인 접근을 애플리케이션까지 포워딩 해주지만 NodePort는 nginx와 같은 별도 리버스 프록시 서버나 로드밸런서,Ingress 설정 등을 구축해야 외부 사용자가 순수 도메인만으로 접근가능하도록 구성할 수 있다.
 {: .prompt-tip }
+
+> ExternalName은 외부와의 Web 통신시(HTTP(S)) 호스트 헤더와의 불일치로 인해 정상적인 응답을 수신하지 못할 수 있다.
+{: . prompt-warning }
+
+<br>
+
+### Endpoints
+
+> Service 오브젝트에 의해 관리되는 오브젝트로 실제 접근할 파드의 IP, 포트번호가 정의된다.
 
 <br>
 
