@@ -111,6 +111,7 @@ tags: [ kubernetes, k8s, devops ]
 > 설정 파일 적용 우선순위: Deployment에 정의된 환경변수 > ConfigMap에 정의된 값 > 이미지에 설정된 값
 {: prompt-tip }
 
+> ConfigMap은 볼륨으로 설정하여 컨테이너 내부에 설정 파일을 생성 후 애플리케이션이 해당 볼륨의 마운트 경로를 참조하도록 구현할 수도 있다. 
 <br>
 
 ### Secret
