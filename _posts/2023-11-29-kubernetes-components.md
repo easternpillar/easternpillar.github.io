@@ -23,6 +23,10 @@ tags: [ kubernetes, k8s, devops ]
 
 > 클러스터와의 모든 상호작용을 위한 API 엔드포인트를 제공하는 구성요소
 
+> kube-apiserver와 다른 컨트롤 플레인 구성요소는 워치(Watch) 메커니즘으로 동작하여 컨트롤 플레인 구성요소가 kube-apiserver를 Http Long-Polling 방식으로 구독하고
+> 이벤트 발생시 kube-apiserver가 구독자에게 이벤트를 전달하는 방식으로 동작한다.
+{: .prompt-info }
+
 <br>
 
 ### etcd
@@ -34,6 +38,9 @@ tags: [ kubernetes, k8s, devops ]
 
 > 별도의 독립된 환경의 클러스터로 구축하기도 한다.
 {: .prompt-tip }
+
+> 일반적으로 ETCD 저장소의 데이터 관리는 2379 포트로 이루어지며 ETCD 클러스터의 동기화 및 합의를 위한 피어 통신은 2380 포트에서 이루어진다.
+{: .prompt-info }
 
 <br>
 
@@ -80,6 +87,9 @@ tags: [ kubernetes, k8s, devops ]
 ### kube-controller-manager
 
 > 클러스터 상태를 원하는 상태로 유지하기 위해 etcd를 관찰하고 컨트롤러를 실행시키는 구성요소
+
+> 각 컨트롤러는 각자가 필요로하는 정보를 메모리에 캐싱하며 `client-go`라는 자체 라이브러리를 통해 프로세스의 메모리 영역 내에 저장하는 방식이다.
+{: .prompt-info }
 
 <br>
 
