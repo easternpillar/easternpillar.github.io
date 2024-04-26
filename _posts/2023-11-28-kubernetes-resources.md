@@ -134,6 +134,12 @@ tags: [ kubernetes, k8s, devops ]
 
 > 리소스를 분리하기 위한 클러스터 수준 오브젝트
 
+### ResourceQuota
+
+> Namespace의 다양한 자원을 할당 및 제한하기 위한 오브젝트
+
+> 하드웨어 자원뿐만 아니라 쿠버네티스 리소스에 대한 제약을 정의할 수 있으며 여러 ResourceQuota 간에 충돌이 발생할 경우 더 엄격한 제약사항을 따른다. 
+
 <br>
 
 ![kubernetes-resources-pv-pvc](/assets/img/posts/kubernetes-resources-pv-pvc.png)
