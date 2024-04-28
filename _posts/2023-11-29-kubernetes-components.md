@@ -82,6 +82,9 @@ tags: [ kubernetes, k8s, devops ]
 > 4. Binding: 해당 노드에 바인딩한다.
 {: .prompt-info }
 
+> 스케줄링 요구사항에 따라 여러개의 스케줄러 인스턴스를 실행하는 것에서 하나의 기본 스케줄러 내에서 여러 프로파일을 구성하여 요구사항과 유연성을 확보했다.
+{: prompt-info }
+
 <br>
 
 ### kube-controller-manager
