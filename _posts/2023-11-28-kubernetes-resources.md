@@ -279,7 +279,10 @@ tags: [ kubernetes, k8s, devops ]
 
 ### NetworkPolicy
 
-> 컨테이너의 Ingress/Egress 네트워크 정책을 제어하기 위한 오브젝트
+> 파드의 Ingress/Egress 네트워크 정책을 제어하기 위한 오브젝트
+
+> NetworkPolicy 오브젝트가 적용되기 위해서는 CNI 플러그인이 존재해야한다.
+{: .prompt-info }
 
 <br>
 

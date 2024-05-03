@@ -35,7 +35,7 @@ tags: [ devops, kubernetes, k8s, security, authentication, authorization ]
 > 도커 데몬은 호스트의 root 권한으로 실행되며 컨테이너 프로세스의 권한을 관리하기 위해 linux capability 기능을 추가/제거하거나 실행할 사용자를 명시하여 컨테이너를 실행하기도 한다. 쿠버네티스에서도 securityContext 하위 필드를 통해 이를 지정할 수 있다. 
 {: .prompt-tip }
 
-> 파드간 통신은 기본적으로 동일 클러스터 내부라면 모두 허용되지만 애플리케이션 특성에 의해 Ingress/Egress 정책 필요시 NetworkPolicy 오브젝트를 지원하는 CNI(Container Network Interface) 솔루션과 labels, selector 또는 ipBlock으로 제어한다. Ingress 허용시 요청을 보낸 컨테이너로의 응답은 Egress 설정이 별도로 필요하지 않다.
+> 파드간 통신은 기본적으로 동일 클러스터 내부라면 모두 허용되지만 애플리케이션 특성에 의해 Ingress/Egress 정책 필요시 NetworkPolicy 오브젝트를 지원하는 CNI(Container Network Interface) 솔루션과 labels, selector 또는 ipBlock(쿠버네티스 환경이 아닌 외부 네트워크의 경우)으로 제어한다. Ingress 허용시 요청을 보낸 컨테이너로의 응답은 Egress 설정이 별도로 필요하지 않다.
 {: .prompt-info }
 
 ## 인가(Authorization)
