@@ -232,7 +232,7 @@ tags: [ kubernetes, k8s, devops ]
 {: .prompt-tip }
 
 > ExternalName은 외부와의 Web 통신시(HTTP(S)) 호스트 헤더와의 불일치로 인해 정상적인 응답을 수신하지 못할 수 있다.
-{: . prompt-warning }
+{: .prompt-warning }
 
 <br>
 
