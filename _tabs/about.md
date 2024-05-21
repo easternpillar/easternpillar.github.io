@@ -17,8 +17,9 @@ order: 4
 - 워드프로세서 2급
 - TOPCIT 3수준
 - 정보처리기사
-- SQLD(SQL 개발자)
-- ADsP(데이터분석 준전문가)
+- SQLD
+- ADsP
+- CKA
 
 ### 교육
 1. Google Cloud Skills Boost: Google Cloud의 Kubernetes 이수 (2022. 7. 24)
