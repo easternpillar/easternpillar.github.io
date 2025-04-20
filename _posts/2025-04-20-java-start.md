@@ -1,5 +1,5 @@
 ---
-title: [학습 노트] 김영한의 자바 입문 - 코드로 시작하는 자바 첫걸음
+title: 김영한의 자바 입문 - 코드로 시작하는 자바 첫걸음
 date: 2025-04-20
 categories: [ Programming Language, Java ]
 tags: [language, java, javac, jar, main, bytecode, class ]
