@@ -58,6 +58,9 @@ tags: [language, java, javac, jar, main, bytecode, class, variable, literal, con
 - 변수의 선언: 변수의 타입과 이름을 정의
 - 변수의 초기화: 값을 설정
 > Java는 초기화되지 않은 변수에 대한 참조를 컴파일 단계에서 확인한다.
+{: .prompt-info }
+
+<br>
 
 ### 자료형(Data Type)
 > 자료형은 크게 기본형(Primitive)과 참조형(Reference)으로 나뉜다.
@@ -77,13 +80,18 @@ tags: [language, java, javac, jar, main, bytecode, class, variable, literal, con
 
 ### 리터럴(Literal)과 상수풀(Constant Pool)
 - 리터럴: Java 코드 내에 직접적으로 명시된 값으로 컴파일 시점에 결정된다.
+
+<br>
+
 > 문자열 상수풀(String Constant Pool): JVM의 메모리 자원 효율을 위해, 문자열 리터럴 및 intern()을 통해 등록된 문자열을 JVM Heap 영역의 특별한 테이블에 저장하여 동일 문자열이 여러 번 사용될 경우에도 하나의 인스턴스를 재사용하도록 설계된 메모리 공간이다.
 {: .prompt-info }
 
 <br>
 
 > 문자열 상수풀은 클래스/런타임 상수풀의 개념과 혼동되곤 한다. 클래스/런타임 상수 풀은 클래스 내 심볼(클래스 이름, 메서드, 필드, 리터럴 등)에 번호(인덱스)를 부여한 테이블을 바이트 코드 내에 구성하고 해당 테이블의 인덱스를 통해 심볼을 참조함으로써, 텍스트 기반 참조의 중복과 메모리 낭비를 방지하고 실행 효율성을 확보한다. 컴파일시 작성되는 이 참조 테이블을 클래스 상수풀이라고 하며, 실행시 JVM에 의해 Method 영역에 적재된 것을 런타임 상수풀이라고 한다.
-> {: .prompt-warning }
+{: .prompt-warning }
+
+<br>
 
 ## 오류(Error)와 예외(Exception)
 > Throwable 클래스의 하위 클래스이며 이를 통해 오류 및 예외를 제어한다.
@@ -109,6 +117,9 @@ tags: [language, java, javac, jar, main, bytecode, class, variable, literal, con
 
 ### 생성자(Constructor)
 > 클래스의 객체(인스턴스)를 생성하기 위한 메서드
+
+<br>
+
 - 정의된 생성자가 없다면 아무런 매개변수가 없는 기본생성자를 자동 생성한다.
 - 여느 메서드와 동일하게 오버로딩 가능하다.
 
@@ -117,6 +128,9 @@ tags: [language, java, javac, jar, main, bytecode, class, variable, literal, con
 
 ### 접근제어자(Access Modifier)
 > 특정 필드 또는 메서드에 접근하는 것을 허용 또는 제한한다.
+
+<br>
+
 - public: 외부에서 접근 허용
 - protected: 동일 패키지 내 또는 상속받은 클래스에 한해 접근 허용
 - default: 동일 패키지 내 클래스에 한해 접근 허용
